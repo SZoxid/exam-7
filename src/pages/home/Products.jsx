@@ -1,7 +1,14 @@
 import React from "react";
 import { FaCartShopping } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleNameClick = () => {
+    navigate("/cart", { state: { product } });
+  };
+
   const Button = ({ children, onClick }) => {
     return <button onClick={onClick}>{children}</button>;
   };
@@ -13,7 +20,10 @@ const Products = ({ product }) => {
         alt={product.product_name}
         className="w-full h-[300px] object-cover"
       />
-      <h4 className="text-[#190D26] text-[20px] font-semibold mt-[22px]">
+      <h4
+        className="text-[#190D26] text-[20px] font-semibold mt-[22px] cursor-pointer"
+        onClick={handleNameClick}
+      >
         {product.name}
       </h4>
       <p className="text-[#190D26] text-[18px] font-normal mt-[12px]">
@@ -28,18 +38,6 @@ const Products = ({ product }) => {
           ></div>
         ))}
       </div>
-
-      <div>
-        {product.color_options.map((color, index) => (
-          <div
-            key={index}
-            style={{
-              background: color,
-            }}
-          ></div>
-        ))}
-      </div>
-
       <strong className="text-[22px] font-bold font-sans">
         ${product.price}
       </strong>

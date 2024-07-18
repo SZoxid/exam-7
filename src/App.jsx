@@ -3,8 +3,7 @@ import Components from "./components/Components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cart from "./pages/cart/Cart";
 import Product from "./pages/product/Product";
-import Home from "./pages/home/Home"
-
+import Home from "./pages/home/Home";
 
 const App = () => {
   return (
@@ -13,7 +12,7 @@ const App = () => {
         <div>
           <Components />
           <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Home />} />
             <Route path="/products" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>

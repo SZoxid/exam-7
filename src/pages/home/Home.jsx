@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import FilterTop from "../home/FilterTop";
-import FilterRight from "../home/FilterRight";
-import FetchProducts from '../home/FetchProducts'
+import FetchProducts from "../home/FetchProducts";
 
 const Home = () => {
+  const [sortOrder, setSortOrder] = useState("");
+
   return (
     <div>
-      <FilterTop />
+      <FilterTop sortOrder={sortOrder} setSortOrder={setSortOrder} />
       <div className="w-[92%] flex m-auto mt-[70px]">
-        <FilterRight />
-        <FetchProducts />
+        <FetchProducts sortOrder={sortOrder} />
       </div>
     </div>
   );
