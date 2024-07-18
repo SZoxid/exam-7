@@ -15,7 +15,7 @@ const NavBottom = () => {
         <div className="w-[520px] mt-[39px] text-[16px] font-medium">
           <ul className="flex justify-between">
             <li>
-              <Link to="/products" className="text-[#0D2612]">
+              <Link to="/" className="text-[#0D2612]">
                 Products
               </Link>
             </li>
@@ -25,22 +25,22 @@ const NavBottom = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="text-[#0D2612]">
+              <Link to="/news" className="text-[#0D2612]">
                 What’s new
               </Link>
             </li>
             <li>
-              <Link to="/" className="text-[#0D2612]">
+              <Link to="/sales" className="text-[#0D2612]">
                 Sales
               </Link>
             </li>
             <li>
-              <Link to="/" className="text-[#0D2612]">
+              <Link to="/help" className="text-[#0D2612]">
                 Help
               </Link>
             </li>
             <li>
-              <Link to="/" className="text-[#0D2612]">
+              <Link to="/about" className="text-[#0D2612]">
                 About
               </Link>
             </li>

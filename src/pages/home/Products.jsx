@@ -7,7 +7,7 @@ const Products = ({ product }) => {
   };
 
   return (
-    <div className="w-[310px] h-[605px] border bg-[#F4F4F4]">
+    <div className="w-[310px] h-[605px] border bg-[#F4F4F4] mb-[25px]">
       <img
         src={product.image_url}
         alt={product.product_name}
@@ -19,7 +19,7 @@ const Products = ({ product }) => {
       <p className="text-[#190D26] text-[18px] font-normal mt-[12px]">
         {product.description}
       </p>
-      <div className="flex gap-[12px] border mt-[21px] mb-[25px] ">
+      <div className="flex gap-[12px] mt-[21px] mb-[25px] ">
         {product.color_options.map((c) => (
           <div
             key={c}
@@ -29,25 +29,28 @@ const Products = ({ product }) => {
         ))}
       </div>
 
-      <div className="">
+      <div>
         {product.color_options.map((color, index) => (
           <div
             key={index}
             style={{
               background: color,
             }}
-            className=""
           ></div>
         ))}
       </div>
 
       <strong className="text-[22px] font-bold font-sans">
-        {product.price}
+        ${product.price}
       </strong>
-      <div className="w-[230px] h-[60px] flex items-center rounded-[10px] bg-[#0BA42D] mt-[17px]">
-        <Button className="">
-          <span className="text-[22px] text-white font-bold ">Add to Cart</span>
-          <FaCartShopping />
+      <div className="w-[230px] h-[60px] flex rounded-[10px] bg-[#0BA42D] mt-[17px] hover:bg-[#3bcc5a]">
+        <Button>
+          <div className="w-[230px] flex justify-center items-center gap-[10px]">
+            <FaCartShopping className="w-[24px] h-[18px] text-white" />
+            <span className="text-[22px] text-white font-bold ">
+              Add to Cart
+            </span>
+          </div>
         </Button>
       </div>
     </div>

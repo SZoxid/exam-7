@@ -44,13 +44,13 @@ const FetchProducts = () => {
   }, [selectedBrand, selectedColor]);
 
   return (
-    <div className="w-[100%] border-[5px] border-red-500">
-      <div className="w-[100%] flex justify-end border-[3px] border-green-500">
+    <div className="w-[100%]">
+      <div className="w-[100%] flex justify-center">
         {loading ? (
           <p>Loading...</p>
         ) : products.length ? (
-          <div className="flex justify-end  w-[100%]">
-            <div className="grid grid-cols-3 gap-[40px]">
+          <div className="w-[100%] flex justify-end">
+            <div className="grid grid-cols-3 gap-[35px] ]">
               {products.map((product) => (
                 <Products key={product.id} product={product} />
               ))}

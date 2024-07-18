@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <FilterTop />
-      <div className="w-[92%] flex m-auto mt-[70px] border border-black">
+      <div className="w-[92%] flex m-auto mt-[70px]">
         <FilterRight />
         <FetchProducts />
       </div>
