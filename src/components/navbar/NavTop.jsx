@@ -7,7 +7,7 @@ import Rectangle from "../../imgs/Rectangle.png";
 
 const NavTop = () => {
   return (
-    <div className="w-[100%] h-[68px] flex justify-between border bg-[#0D2613]">
+    <div className="w-[100%] h-[68px] flex justify-between bg-[#0D2613]">
       <div className="w-[85%] h-[100%] flex justify-between m-auto">
         <div className="w-[220px] text-white flex justify-between items-center">
           <img src={Logo} alt="img" className="w-[48px] h-[30px]" />
@@ -23,7 +23,7 @@ const NavTop = () => {
         </div>
         <div className="w-[270px] flex justify-between items-center text-white ">
           <div className="flex items-center gap-[11px]">
-            <select className="w-[80px] h-[30px] text-[14px] font-medium text-white bg-[#0D2613] border-none">
+            <select className="w-[80px] h-[30px] text-[14px] font-medium text-white bg-[#0D2613] outline-none">
               <option value="">English</option>
               <option value="">Russian</option>
               <option value="">Uzbek</option>

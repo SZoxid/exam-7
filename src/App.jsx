@@ -1,9 +1,10 @@
 import React from "react";
 import Components from "./components/Components";
-import NavBottom from "./components/navbar/NavBottom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cart from "./pages/cart/Cart";
 import Product from "./pages/product/Product";
+import Home from "./pages/home/Home"
+
 
 const App = () => {
   return (
@@ -11,10 +12,9 @@ const App = () => {
       <Router>
         <div>
           <Components />
-          <NavBottom />
-          <Product />
           <Routes>
-            <Route path="/" element={<Product />} />
+            <Route path="/" element={<Home/>}/>
+            <Route path="/products" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
