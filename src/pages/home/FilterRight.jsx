@@ -56,7 +56,7 @@ const FilterRight = ({
       <div>
         <button
           onClick={resetFilters}
-          className="mt-[20px] p-[10px] bg-[#0BA42D] text-white rounded-[5px]"
+          className="w-[160px] h-[40px] mt-[30px] bg-[#0BA42D] text-white rounded-[5px]"
         >
           Reset
         </button>

@@ -1,16 +1,18 @@
 import React from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../components/CartContex";
 
 const Products = ({ product }) => {
   const navigate = useNavigate();
+  const { dispatch } = useCart();
 
   const handleNameClick = () => {
     navigate(`/product/${product.id}`, { state: { product } });
   };
 
-  const Button = ({ children, onClick }) => {
-    return <button onClick={onClick}>{children}</button>;
+  const handleAddToCart = () => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
   return (
@@ -42,14 +44,14 @@ const Products = ({ product }) => {
         ${product.price}
       </strong>
       <div className="w-[230px] h-[60px] flex rounded-[10px] bg-[#0BA42D] mt-[17px] hover:bg-[#3bcc5a]">
-        <Button>
-          <div className="w-[230px] flex justify-center items-center gap-[10px]">
+        <button onClick={handleAddToCart} className="w-full h-full">
+          <div className="w-full h-full flex justify-center items-center gap-[10px]">
             <FaCartShopping className="w-[24px] h-[18px] text-white" />
             <span className="text-[22px] text-white font-bold ">
               Add to Cart
             </span>
           </div>
-        </Button>
+        </button>
       </div>
     </div>
   );

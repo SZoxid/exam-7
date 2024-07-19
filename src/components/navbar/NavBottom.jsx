@@ -4,8 +4,12 @@ import Navicon from "../../imgs/Navbottom-icon.svg";
 import { RiSearchLine } from "react-icons/ri";
 import { LuUser } from "react-icons/lu";
 import { SlBasket } from "react-icons/sl";
+import { useCart } from "../CartContex";
 
 const NavBottom = () => {
+  const { cart } = useCart();
+  const cartCount = cart.length;
+
   return (
     <div className="">
       <div className="w-[84%] flex justify-between items-center m-auto ">
@@ -50,9 +54,14 @@ const NavBottom = () => {
           <RiSearchLine className="w-[18px] h-[18px]" />
           <LuUser className="w-[18px] h-[18px]" />
           <ul>
-            <li className="text-[#0D2612]">
+            <li className="text-[#0D2612] relative">
               <Link to="/cart" className="w-[18px] h-[18px]">
                 <SlBasket />
+                {cartCount > 0 && (
+                  <span className="absolute top-[-10px] left-[12px] w-[18px] h-[18px] flex justify-center items-center text-xs text-white bg-red-600 rounded-full">
+                    {cartCount}
+                  </span>
+                )}
               </Link>
             </li>
           </ul>
