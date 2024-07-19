@@ -6,7 +6,7 @@ const Products = ({ product }) => {
   const navigate = useNavigate();
 
   const handleNameClick = () => {
-    navigate("/cart", { state: { product } });
+    navigate(`/product/${product.id}`, { state: { product } });
   };
 
   const Button = ({ children, onClick }) => {
